@@ -1,3 +1,5 @@
-# test3
+# RESTful sails.js
 
-a [Sails](http://sailsjs.org) application
+a [Sails](http://sailsjs.org) application.
+
+# Learning sails.js
