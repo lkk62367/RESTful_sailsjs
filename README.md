@@ -2,4 +2,10 @@
 
 a [Sails](http://sailsjs.org) application.
 
-# Learning sails.js
+# Install sails.js
+
+Type 'npm install sails' on Terminal
+
+#Create project
+
+Type 'sails new project_name' on Terminal
