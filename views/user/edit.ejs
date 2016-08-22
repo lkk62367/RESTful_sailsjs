@@ -1,0 +1,11 @@
+<form action="/user/update/<%= user.id %>" method="POST" class="form-signin">
+
+  <h2> 修改資料</h2>
+
+  <input value="<%= user.name%>" name="name" type="text" class="form-control"/>
+  <input value="<%= user.title%>" name="title" type="text" class="form-control"/>
+  <input value="<%= user.email%>" name="email" type="text" class="form-control"/>
+  <input type="submit" value="確定" class="btn btn-lg btn-primary btn-block"/>
+  <input type="button" value="返回" class="btn btn-lg btn-primary btn-block" onclick="history.back()" />
+  <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+</form>

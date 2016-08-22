@@ -1,0 +1,29 @@
+<form action="/user/create" method="POST" id="sign-up-form" class="form-signin">  <h2 class="form-signin-heading"> 申請新帳戶</h2>
+
+
+  <% if(flash && flash.err){ %>
+  <ul class="alert alert-success">
+    <% Object.keys(flash.err).forEach(function(error){ %>
+    <li><%- JSON.stringify(flash.err[error]) %></li>
+    <% })%>
+  </ul>  
+  <%}%>
+
+
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="名子" name="name">
+  </div>
+
+  <input type="text" class="form-control" placeholder="姓" name="title">
+
+  <input type="text" class="form-control" placeholder="E-mail" name="email">
+
+  <input type="password" class="form-control" placeholder="密碼" name="password">
+
+  <input type="password" class="form-control" placeholder="重複密碼" name="confirmation">
+
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="新增帳戶"/>
+
+  <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+
+</form>
