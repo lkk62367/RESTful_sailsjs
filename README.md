@@ -34,7 +34,7 @@ From terminal-
     -Run "git clone git@github.com:lkk62367/RESRful_sailsjs.git"
     -cd into the newly created directory.
     -Run "npm install" to install the necessary packages.
-    -Run "sails lift"
+    -Run "sudo sails lift"
 
 
 ### Reference 
