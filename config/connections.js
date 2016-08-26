@@ -37,7 +37,7 @@ module.exports.connections = {
     port: 27017,
     user: '',
     password: '',
-    database: 'test3'
+    database: 'RESTful_sailsjs'
   },
 
 
