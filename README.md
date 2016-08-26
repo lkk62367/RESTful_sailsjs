@@ -12,7 +12,7 @@
 
 * A [Sails](http://sailsjs.org/) application. This is my first Sails.js app.
 * This app is based on the "Working with data in Sails.js" tutorial by Irl Nathan on http://irlnathan.github.io/sailscasts/.
-* 
+*
 
 
 ### Learning
@@ -37,7 +37,7 @@ From terminal-
     -Run "sudo sails lift"
 
 
-### Reference 
+### Reference
 
 [Learning Blog](http://kennytu.github.io/blog/categories/sails/)
 

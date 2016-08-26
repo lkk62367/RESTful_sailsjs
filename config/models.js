@@ -18,7 +18,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // connection: 'localDiskDb',
-    connection: 'someMongodbServer',
+  connection: 'someMongodbServer',
   autoCreatedAt: true,
   autoUpdatedAt: true,
 
