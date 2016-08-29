@@ -1,11 +1,15 @@
-<div class="container">
-  <h1>名子：<%= user.name %></h1>
+<div class='container'>
+    <h1>名字：<%= user.name %></h1>
+	<% if (user.admin) { %>
+		<img src="/images/admin.png">管理者
+	<% } else { %>
+			<img src="/images/pawn.png">一般使用者
+	<% } %>
+    <!-- %= pipe as text while %- pipe as html. -->
+    <h3>姓：<%= user.title %></h3>
     <hr>
-  <h3>姓：<%= user.title %></h3>
-  <hr>
-  <h3>E-mail：<%= user.email %></h3>
+    <h3>E-mail: <%- user.email %></h3>
 
-  <a class="btn btn-medium btn-primary" href="/user/edit/<%= user.id %>"> 修改</a>
-  <a class="btn btn-medium btn-primary" href="/user/index/<%= user.id %>"> 返回</a>
-
+    <a class="btn btn-medium btn-primary" href="/user/edit/<%= user.id %>">修改</a>
+    <a class="btn btn-medium btn-primary" href="/user/index/<%= user.id %>"> 返回</a>
 </div>

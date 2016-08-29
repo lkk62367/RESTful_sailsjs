@@ -1,24 +1,20 @@
 <form action="/user/update/<%= user.id %>" method="POST" class="form-signin">
+    <h2>修改資料</h2>
 
-  <h2>修改資料</h2>
+    名字：<input value="<%= user.name %>" name="name" type="text" class="form-control"/>
+    姓：<input value="<%= user.title %>" name="title" type="text" class="form-control"/>
+    E-mail：<input value="<%= user.email %>" name="email" type="email" class="form-control"/>
+	<% if (session.authenticated && session.User.admin) { %>
+		<% if (user.admin) { %>
+        	<input type="hidden" name="admin" value="unchecked">
+        	<label class="checkbox"><input type="checkbox" name="admin" checked> 管理者</label>
+		<% } else { %>
+			<input type="hidden" name="admin" value="unchecked">
+			<label class="checkbox"><input type="checkbox" name="admin"> 管理者</label>
+		<% } %>
+	<% } %>
+    <input value="確定" type="submit" class="btn btn-lg btn-primary btn-block"/>
+  <input type="button" value="返回" class="btn btn-lg btn-primary btn-block" onclick="history.back()" />
+    <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
 
-  <input value="<%= user.name %>" name="name" type="text" class="form-control"/>
-  <input value="<%= user.title %>" name="title" type="text" class="form-control"/>
-  <input value="<%= user.email %>" name="email" type="text" class="form-control"/>
-
-  <% if (session.authenticated && session.User.admin) { %>
-      <% if (user.admin) { %>
-          <input type="hidden" name="admin" value="checkAdmin">
-          <label class="checkbox">
-              <input type="checkbox" name="admin" checked> Admin
-          </label>
-      <% } else { %>
-          <input type="hidden" name="admin" value="checkAdmin">
-          <label class="checkbox"><input type="checkbox" name="admin"> Admin</label>
-      <% } %>
-  <% } %>
-
-  <input type="submit" value="確定" class="btn btn-lg btn-primary btn-block"/>
-    <input type="button" value="返回" class="btn btn-lg btn-primary btn-block" onclick="history.back()" />
-  <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
 </form>

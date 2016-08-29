@@ -1,32 +1,35 @@
 <div class="container">
-  <h3>使用者</h3>
-  <table class="table">
-    <tr>
-      <th>名稱</th>
-      <th>姓</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    <h3>使用者</h3>
+    <table class="table">
+        <tr>
+            <th>名字</th>
+            <th>姓</th>
+            <th>E-mail</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <% _.each(users, function(user){ %>
+        <tr data-id="<%= user.id %>" data-model="user">
+            <td><%= user.name %></td>
+            <td><%= user.title %></td>
+            <td><%= user.email %></td>
+			<% if (user.admin) { %>
+				<td> <img src="/images/admin.png"></td>
+			<% } else { %>
+				<td> <img src="/images/pawn.png"></td>
+			<% } %>
+            <td><a href="/user/show/<%= user.id %>" class="btn btn-sm btn-primary">查詢</td>
+            <td><a href="/user/edit/<%= user.id %>" class="btn btn-sm btn-warning">修改</td>
+            <td>
+                <form action="/user/destroy/<%= user.id %>" method="POST">
+                    <input type="hidden" name="_method" value="delete"/>
+                    <input type="submit" class="btn btn-sm btn-danger" value="刪除"/>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                </form>
+            </td>
 
-    <% _.each(users, function(user){ %>
-    <tr data-id="<%= user.id %>" data-model="user">
-      <td><%= user.name %></td>
-      <td><%= user.title%></td>
-      <td><%= user.email%></td>
-      <td><a href="/user/show/<%= user.id %>" class="btn btn-sm btn-primary">查詢</a></td>
-      <td><a href="/user/edit/<%= user.id %>" class="btn btn-sm btn-warning">修改</a></td>
+        </tr>
+        <% }) %>
 
-      <td>
-        <form action="/user/destroy/<%= user.id%>" method="POST">
-          <input type="hidden" name="_method" value="delete"/>
-          <input type="submit" class="btn btn-sm btn-danger" value="刪除"/>
-          <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
-        </form>
-      </td>
-    </tr>
-
-    <%}) %>
-  </table>
+    </table>
 </div>
